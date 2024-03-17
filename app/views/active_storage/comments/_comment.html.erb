@@ -1,0 +1,18 @@
+<div class="card">
+    <% if comment.user%>
+
+        <strong>Пользователь:</strong>
+        <%= comment.user.email%>
+        <br> <%#post.user.email?%>
+
+    <%else%>
+        <em>Пользователь удален</em>
+    <%end%>
+    <p>Comment:<%= comment.body%></p>
+
+        <% if current_user == comment.user%>
+        <div class="button-group float-end">
+            <%= button_to "Delete", [post, comment], method: :delete, class: "btn btn-primary"%>
+        </div>
+    <%end%>
+</div>

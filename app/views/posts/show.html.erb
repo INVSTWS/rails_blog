@@ -1,20 +1,42 @@
 <p style="color: green"><%= notice %></p>
 
-<%# <strong>
-  Title:
-</strong>
-<%= @post.title%>
+
+<div class="header d-flex align-items-center">
+  <div class="flex-shrink-0 col-4">
+    <% if @post.image.attached?%>
+      <%= image_tag(@post.image, class:"intro-image")%>
+    <%end%>
+  </div>
+  <div class="article-header-content col-8">
+    <h2>
+      <%= @post.title%>
+    </h2>
+
+    <p>
+      <%= @post.introduction%>
+    </p>
+  </div>
+</div>
+
+
 <br>
 
 
-<div class="d-flex justify-content-center">
-<%= @post.content%>
+<div class="content-text">
+  <%= @post.content%>
 </div>
-<strong>
-  Desc:
-</strong>
 
 
+<%#= FOR DESCRIPTION https://stackoverflow.com/questions/42782858/how-to-center-the-text-larger-than-the-container%>
+
+
+<%= render "active_storage/comments/form", post: @post%>
+
+<% @post.comments.each do |comment|%>
+
+  <%= render "active_storage/comments/comment", post: @post, comment: comment%>
+
+<%end%>
 
 
 <div>
@@ -23,3 +45,6 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+
+

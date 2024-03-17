@@ -24,6 +24,16 @@
       <%= form.text_area :content, class: "form-control mb-3"%>
     </div>
 
+    <div>
+      <%= form.label :introduction, style: "display: block" %>
+      <%= form.text_area :introduction, class: "form-control mb-3"%>
+    </div>
+
+    <div>
+      <%= form.label :image, style: "display: block" %>
+      <%= form.file_field :image, class: "form-control mb-3"%>
+    </div>
+
     <div class="mb-4">
       <%= form.submit class:"btn btn-primary" %>
     </div>
