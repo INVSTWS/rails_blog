@@ -1,6 +1,8 @@
-<%= form_with(model: [post, post.comments.build]) do |f|%>
+<div class="article-form">
+    <%= form_with(model: [post, post.comments.build]) do |f|%>
 
-    <%= f.rich_text_area :body, placeholder: "Enter your comment"%>
-    <%= f.submit "Reply", class: "btn btn-primary mt-1"%>
+        <%= f.rich_text_area :body, placeholder: "Enter your comment", class: "form-control"%>
+        <%= f.submit "Reply", class: "btn btn-primary mt-1 mb-2"%>
 
-<%end%>
+    <%end%>
+</div>

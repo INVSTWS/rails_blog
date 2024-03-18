@@ -1,0 +1,5 @@
+<%= search_form_for(@query, url: search_path, method: :get, class: "d-flex") do |f| %>
+    <%= f.search_field :title_or_content_or_introduction_i_cont_any, placeholder:"Enter your query..." %>
+    <%= f.submit %>
+<%end%>
+

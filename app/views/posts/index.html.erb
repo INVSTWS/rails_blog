@@ -5,10 +5,10 @@
 
   <div class="justify-content-center row row-cols-3 ">
     <% @posts.each do |post| %>
-      <div class="card col-3 ms-5 mb-3">
-      <% if post.image.attached?%>
-          <%= image_tag(post.image, class:"post_image card-img-top")%>
-      <%end%>
+      <div class="index-card card col-3 ms-5 mb-3">
+        <% if post.image.attached?%>
+            <%= image_tag(post.image, class:"post_image card-img-top")%>
+        <%end%>
         <div class="card-body">
           <h5 class="card-title">
               <%= link_to post.title, post_path(post)%>
@@ -23,6 +23,8 @@
     <% end %>
   </div>
 <%= link_to "New post", new_post_path %>
+
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
 
 <%# для каждого поста надо добавить introduction, который будет писаться в форме при создании самого поста%> 
 <%# для кажд.отдельного intro из паршла post добавлять bootstrap стили %>

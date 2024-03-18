@@ -24,19 +24,26 @@
 
 <div class="content-text">
   <%= @post.content%>
+</div>  
+
+
+
+
+<div>
+
+  <h5>Comments:<%= @post.comments.count%></h5>
+
+  <%= render "active_storage/comments/form", post: @post%>
+
+  <% @post.comments.each do |comment|%>
+
+    <%= render "active_storage/comments/comment", post: @post, comment: comment%>
+
+  <%end%>
+
 </div>
 
 
-<%#= FOR DESCRIPTION https://stackoverflow.com/questions/42782858/how-to-center-the-text-larger-than-the-container%>
-
-
-<%= render "active_storage/comments/form", post: @post%>
-
-<% @post.comments.each do |comment|%>
-
-  <%= render "active_storage/comments/comment", post: @post, comment: comment%>
-
-<%end%>
 
 
 <div>

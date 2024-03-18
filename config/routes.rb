@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'search', to: "search#index"
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
 
   # /posts/1/comments/4
   
