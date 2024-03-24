@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'u/:id/', to: "users#profile", as: :user
   get 'search', to: "search#index"
   devise_for :users, controllers: {
     registrations: "users/registrations"
