@@ -74,3 +74,5 @@ gem "devise", "~> 4.9"
 gem "ransack", "~> 4.1"
 
 gem "jsbundling-rails", "~> 1.3"
+
+gem "noticed", "~> 1.5.7"
